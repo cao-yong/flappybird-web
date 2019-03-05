@@ -10,7 +10,7 @@ export class Pencil extends Sprite {
             0, 0,
             image.width, image.height,
             //刚好在右侧看不到的位置
-            window.innerWidth, 0,
+            Director.getInstance().canvasWidth, 0,
             image.width, image.height);
         this.top = top;
     }

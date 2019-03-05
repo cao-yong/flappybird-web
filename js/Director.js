@@ -15,13 +15,16 @@ export class Director {
     }
 
     constructor() {
+        let canvas = document.getElementById("game_canvas");
         this.dataStore = DataStore.getInstance();
         this.moveSpeed = 2;
+        this.canvasWidth = canvas.offsetWidth;
+        this.canvasHeight = canvas.offsetHeight;
     }
 
     createPencil() {
-        const minTop = window.innerHeight / 8;
-        const maxTop = window.innerHeight / 2;
+        const minTop = Director.getInstance().canvasHeight / 8;
+        const maxTop = Director.getInstance().canvasHeight / 2;
         const top = minTop + Math.random() * (maxTop - minTop);
         this.dataStore.get('pencils').push(new Uppencil(top));
         this.dataStore.get('pencils').push(new DownPencil(top));
@@ -37,7 +40,7 @@ export class Director {
                 pencils.shift();
             }
 
-            if (pencils[0].x <= (window.innerWidth - pencils[0].width) / 2 && pencils.length === 2) {
+            if (pencils[0].x <= (Director.getInstance().canvasWidth - pencils[0].width) / 2 && pencils.length === 2) {
                 this.createPencil();
             }
 

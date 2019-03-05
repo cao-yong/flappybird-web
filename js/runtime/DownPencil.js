@@ -1,5 +1,6 @@
 import {Pencil} from "./Pencil.js";
 import {Sprite} from "../base/Sprite.js";
+import {Director} from "../Director.js";
 
 export class DownPencil extends Pencil {
     constructor(top) {
@@ -8,7 +9,7 @@ export class DownPencil extends Pencil {
     }
 
     draw() {
-        let gap = window.innerHeight / 5;
+        let gap = Director.getInstance().canvasHeight / 5;
         this.y = this.top + gap;
         super.draw();
     }

@@ -1,4 +1,5 @@
 import {Sprite} from "../base/Sprite.js";
+import {Director} from "../Director.js";
 
 export class BackGround extends Sprite {
     constructor() {
@@ -7,7 +8,7 @@ export class BackGround extends Sprite {
             0, 0,
             image.width, image.height,
             0, 0,
-            window.innerWidth, window.innerHeight
+            Director.getInstance().canvasWidth, Director.getInstance().canvasHeight
         );
     }
 }
