@@ -1,4 +1,5 @@
 import {Sprite} from "../base/Sprite.js";
+import {Director} from "../Director.js";
 
 export class Birds extends Sprite {
     constructor() {
@@ -10,9 +11,9 @@ export class Birds extends Sprite {
         this.clippingY = [9, 9, 9];
         this.clippingWidth = [34, 34, 34];
         this.clippingheight = [24, 24, 24];
-        const birdX = window.innerWidth / 4;
+        const birdX = Director.getInstance().canvasWidth / 4;
         this.birdsX = [birdX, birdX, birdX];
-        const birdY = window.innerHeight / 2;
+        const birdY = Director.getInstance().canvasHeight / 2;
         this.birdsY = [birdY, birdY, birdY];
         const birdWith = 34;
         this.birdsWidth = [birdWith, birdWith, birdWith];
